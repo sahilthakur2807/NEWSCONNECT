@@ -1,0 +1,26 @@
+#newsconnect-hover-btn {
+  background-color: #e11d48;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, background-color 0.2s;
+  pointer-events: auto;
+}
+
+#newsconnect-hover-btn:hover {
+  background-color: #be123c;
+  transform: scale(1.05);
+}
+
+#newsconnect-hover-btn svg {
+  width: 14px;
+  height: 14px;
+}
