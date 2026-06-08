@@ -1,7 +1,14 @@
-import { Search, Puzzle } from 'lucide-react';
+import { Search, Puzzle, LogOut } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+
+  const getInitials = (name) => {
+    return name ? name.charAt(0).toUpperCase() : '?';
+  };
+
   return (
     <nav className="navbar">
       <div className="container navbar-content">
@@ -33,8 +40,22 @@ const Navbar = () => {
             <Puzzle size={18} />
             <span>Extension</span>
           </Link>
-          <button className="btn-text">Sign in</button>
-          <button className="btn-primary">Join</button>
+          
+          {user ? (
+            <div className="user-menu">
+              <div className="user-avatar" title={user.username}>
+                {getInitials(user.username)}
+              </div>
+              <button className="btn-icon" onClick={logout} title="Logout">
+                <LogOut size={18} />
+              </button>
+            </div>
+          ) : (
+            <>
+              <Link to="/login" className="btn-text">Sign in</Link>
+              <Link to="/signup" className="btn-primary">Join</Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

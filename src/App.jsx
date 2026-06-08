@@ -1,21 +1,37 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './hooks/useAuth';
 import Navbar from './components/Navbar';
 import LandingPage from './routes/LandingPage';
 import ExtensionPage from './routes/ExtensionPage';
+import LoginPage from './routes/LoginPage';
+import SignupPage from './routes/SignupPage';
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <main>
+    <AuthProvider>
+      <Router>
+        <div className="app">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/extension" element={<ExtensionPage />} />
+            {/* Auth routes without Navbar */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            
+            {/* Main routes with Navbar */}
+            <Route path="*" element={
+              <>
+                <Navbar />
+                <main>
+                  <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/extension" element={<ExtensionPage />} />
+                  </Routes>
+                </main>
+              </>
+            } />
           </Routes>
-        </main>
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
