@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     // Check if user is logged in on mount
     const checkUser = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/auth/me', {
+        const response = await fetch('/api/auth/me', {
           credentials: 'include'
         });
         if (response.ok) {
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await fetch('http://localhost:5001/api/auth/login', {
+    const response = await fetch('/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signup = async (username, email, password) => {
-    const response = await fetch('http://localhost:5001/api/auth/signup', {
+    const response = await fetch('/api/auth/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, email, password }),
@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await fetch('http://localhost:5001/api/auth/logout', {
+    await fetch('/api/auth/logout', {
       method: 'POST',
       credentials: 'include'
     });

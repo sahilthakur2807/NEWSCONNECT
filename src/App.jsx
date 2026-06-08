@@ -5,6 +5,7 @@ import LandingPage from './routes/LandingPage';
 import ExtensionPage from './routes/ExtensionPage';
 import LoginPage from './routes/LoginPage';
 import SignupPage from './routes/SignupPage';
+import RoomPage from './routes/RoomPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                   <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/extension" element={<ExtensionPage />} />
+                    <Route path="/room/:roomId" element={<RoomPage />} />
                   </Routes>
                 </main>
               </>
