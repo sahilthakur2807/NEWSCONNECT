@@ -80,6 +80,11 @@ input {
   gap: 2rem;
 }
 
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -299,4 +304,123 @@ input {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.875rem;
+}
+
+// Extension Page Styles
+.extension-page {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.extension-hero {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.extension-icon-large {
+  background: var(--primary);
+  color: white;
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.extension-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.extension-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.btn-download {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+
+  &:hover {
+    background: var(--primary-hover);
+  }
+}
+
+.instructions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.instruction-card {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h3 {
+    font-size: 1.25rem;
+    font-family: inherit;
+    font-weight: 700;
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+}
+
+.icon-red {
+  color: var(--primary);
+}
+
+.how-it-works-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 3rem;
+  text-align: left;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+}
+
+.benefit-icon {
+  color: var(--primary);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
 }
